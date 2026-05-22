@@ -1,11 +1,11 @@
 const firstName = 'Alexander';
 const lastName = 'Garavyy';
 const age = 29;
-const city = 'St-Pitersburg';
+const city = 'Saint Pitersburg';
 const isLearningProgramming = true;
 
 
-const favoriteLanguages = ["JavaScript", "Python"];
+const favoriteLanguages = ['JavaScript', 'Python'];
 
 
 const goals = {
@@ -17,16 +17,21 @@ const goals = {
 const currentYear = 2026;
 let birthYear = currentYear - age;
 
-const skillsToLearn = ['Javascript', 'English', 'Инженерное мышление','Дисциплина','Сила воли'];
+const skillsToLearn = ['JavaScript', 'English', 'Engineering mindset','Discipline','Willpower'];
 
-const templateString = `Я родился в ${currentYear} и хочу выучить и освоить ${skillsToLearn.length } технологий`;
+const templateString = `Я родился в ${birthYear} и хочу выучить и освоить ${skillsToLearn.length } технологий`;
 
-console.log("Привет! Меня зовут", firstName, lastName);
-console.log("Мне", age, "лет, я из города", city);
-console.log("Учу программирование?", isLearningProgramming);
-console.log("Любимые языки:", favoriteLanguages);
-console.log("Мои цели:", goals);
+console.log('Привет! Меня зовут', firstName, lastName);
+console.log('Мне', age, 'лет, я из города', city);
+console.log('Учу программирование?', isLearningProgramming);
+console.log('Любимые языки:', favoriteLanguages);
+console.log('Мои цели:', goals);
 
 console.log(`Через ${goals.months} месяцев я стану junior!`);
 console.log(templateString);
 console.log(`Я родился в ${birthYear} году!`);
+console.log(typeof 'Мне');
+console.log(typeof currentYear);
+console.log(typeof goals);
+console.log(typeof age);
+console.log(typeof 29);
