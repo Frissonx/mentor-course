@@ -4,7 +4,7 @@ if (age < 13) {
     console.log('Ребенок');
 } else if (age < 18) {
     console.log('Подросток');
-} else if(age < 60) {
+} else if (age < 60) {
     console.log('Взрослый');
 } else {
     console.log('Пенсионер');
@@ -51,7 +51,8 @@ switch (operation) {
     case '/': {
         result = num2 === 0 ? 'Делить на ноль нельзя' : num1 / num2;
         break;
-    } default : {
+    } 
+    default: {
         result = 'Неизвестная операция';
     }
         
