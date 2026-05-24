@@ -18,7 +18,7 @@ const operation = '/';
 
 let result;
 
-if (operation === '=') {
+if (operation === '+') {
     result = num1 + num2;
 } else if (operation === '-') {
     result = num1 - num2;
@@ -33,30 +33,30 @@ if (operation === '=') {
 }
 
 console.log(`${num1} ${operation} ${num2} = ${result}`);
-// if (operation === '/' && num2 == 0){
-//     console.log('Нельзя делить на ноль');
-// }
 
-// switch (operation) {
-//     case '+': {
-//         result = num1 + num2;
-//         break;
-//     }
-//     case '-': {
-//         result = num1 - num2;
-//         break;
-//     }
-//     case '*': {
-//         result = num1 * num2;
-//         break
-//     }
-//     case '/': {
-//         result = num1 / num2;
-//         break;
-//     }
+
+switch (operation) {
+    case '+': {
+        result = num1 + num2;
+        break;
+    }
+    case '-': {
+        result = num1 - num2;
+        break;
+    }
+    case '*': {
+        result = num1 * num2;
+        break
+    }
+    case '/': {
+        result = num2 === 0 ? 'Делить на ноль нельзя' : num1 / num2;
+        break;
+    } default : {
+        result = 'Неизвестная операция';
+    }
         
-// }
-// console.log(`${num1} ${operation} ${num2} = ${result}`);
+}
+console.log(`${num1} ${operation} ${num2} = ${result}`);
 
 // Задание 3 
 
@@ -95,7 +95,7 @@ console.log(number1);
 
 const fizzBuzz = 22;
 
-if(fizzBuzz % 15 === 0) {
+if (fizzBuzz % 15 === 0) {
     console.log('FizzBuzz');
 } else if (fizzBuzz % 3 === 0) {
     console.log('Fizz');
@@ -105,4 +105,7 @@ if(fizzBuzz % 15 === 0) {
     console.log(fizzBuzz);
 }
 
-console.log(5 - '5');
+console.log(5 + '5');
+console.log('5' - '5');
+console.log('5' + 5 + 5);
+console.log(5 + 5 +'5');
