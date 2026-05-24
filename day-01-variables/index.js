@@ -1,7 +1,7 @@
 const firstName = 'Alexander';
 const lastName = 'Garavyy';
 const age = 29;
-const city = 'Saint Pitersburg';
+const city = 'Saint Petersburg';
 const isLearningProgramming = true;
 
 
@@ -33,5 +33,8 @@ console.log(`Я родился в ${birthYear} году!`);
 console.log(typeof 'Мне');
 console.log(typeof currentYear);
 console.log(typeof goals);
-console.log(typeof age);
+console.log(typeof favoriteLanguages);
 console.log(typeof 29);
+
+console.log(Array.isArray(favoriteLanguages));
+console.log(Array.isArray(goals));
