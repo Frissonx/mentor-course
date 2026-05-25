@@ -80,7 +80,8 @@ for (let i = 1; i <= 20; i++) {
 
 for (let n = 2; n <= 150; n++) {
     let isPrime = true;
-    for (let div = 2; div <= Math.sqrt(n); div++) {
+    const limit = Math.sqrt(n);
+    for (let div = 2; div <= limit; div++) {
         if (n % div === 0) {
             isPrime = false;
             break;
