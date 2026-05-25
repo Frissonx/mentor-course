@@ -78,10 +78,9 @@ for (let i = 1; i <= 20; i++) {
 }
 // Задание 7.(опцианально)
 
-for (let n = 2; n <= 50; n++) {
+for (let n = 2; n <= 150; n++) {
     let isPrime = true;
-
-    for (let div = 2; div < n; div ++) {
+    for (let div = 2; div <= Math.sqrt(n); div++) {
         if (n % div === 0) {
             isPrime = false;
             break;
