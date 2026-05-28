@@ -22,7 +22,7 @@ console.log(sum);
 // Задание 3.
 const prices = [100, 250, 75, 480, 999, 50];
 let summa = 0;
-let max = prices[0];
+
 
 for (let i = 0; i < prices.length; i++) {
     console.log(`Товар #${i + 1}: ${prices[i]} руб`);
@@ -33,12 +33,15 @@ for (const price of prices) {
 }
 console.log(summa);
 
-for (const price of prices) {
-    if (price > max) {
-        max = price;
+if (prices.length > 0) {
+    let max = prices[0];
+
+    for (const price of prices) {
+        if (price > max) {
+            max = price;
     }
 }
-console.log(max);
+}
 
 // Задание 4.
 const number = 7;
@@ -47,12 +50,12 @@ for (let i = 1; i <= 10; i++) {
     let multi = number * i;
     console.log(`${number} * ${i} = ${multi} `);
 }
-console.log('---')
+console.log('---');
 
 for (let i = 2; i <= 9; i++) {
     for (let j = 1; j <= 10; j++) {
         let multi = i * j;
-        console.log(`${i} * ${j} = ${multi}`)
+        console.log(`${i} * ${j} = ${multi}`);
     }
     console.log('---');
 }
@@ -62,7 +65,7 @@ const search = 'David';
 let found = false;
 for (let i = 0; i < users.length; i++) {
     if(users[i] === search) {
-        console.log(`Found at index ${i}`)
+        console.log(`Found at index ${i}`);
         found = true;
         break;
     }
@@ -91,4 +94,3 @@ for (let n = 2; n <= 150; n++) {
         console.log(n);
     }
 }
-
