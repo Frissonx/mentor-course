@@ -61,8 +61,8 @@ console.log(tags2.join(" "));
 const keys = ["Name", "Age", "City", "Skills"];
 const csv = "Alex,29,Saint Petersburg,JavaScript";
 const values = csv.split(",");
-const zip = (keys, values) => keys.map((key, i) => `${key} : ${values[i]}`);
-console.log(zip(keys, values));
+const zip = (keys, values) => keys.map((key, i) => [key, values[i]]);
+console.log(zip(keys, values).map(([k, v]) => `${k}: ${v}`));
 
 const sentence = "Hello world this is JavaScript";
 const sentence1 = sentence.split(" ").length;
