@@ -288,3 +288,103 @@ console.log(more100AndInStock);
 
 // 3. Названия товаров дороже 100 И в наличии
 //    (filter с двумя условиями через &&) → ['Cheese', 'Eggs', 'Butter']
+
+// Задание 6. Mini-project
+
+const users = [
+  {
+    id: 1,
+    name: "Anna",
+    age: 25,
+    city: "Moscow",
+    isActive: true,
+    salary: 80000,
+  },
+  {
+    id: 2,
+    name: "Boris",
+    age: 17,
+    city: "Saint Petersburg",
+    isActive: false,
+    salary: 0,
+  },
+  {
+    id: 3,
+    name: "Carol",
+    age: 30,
+    city: "Moscow",
+    isActive: true,
+    salary: 120000,
+  },
+  {
+    id: 4,
+    name: "David",
+    age: 22,
+    city: "Kazan",
+    isActive: true,
+    salary: 65000,
+  },
+  { id: 5, name: "Elena", age: 19, city: "Moscow", isActive: false, salary: 0 },
+  {
+    id: 6,
+    name: "Frank",
+    age: 45,
+    city: "Saint Petersburg",
+    isActive: true,
+    salary: 150000,
+  },
+  {
+    id: 7,
+    name: "Greg",
+    age: 35,
+    city: "Kazan",
+    isActive: true,
+    salary: 95000,
+  },
+];
+
+// Каждая функция принимает users параметром и возвращает результат:
+// 1. getActiveUsers(users) → массив активных пользователей (isActive)
+function getActiveUsers(users) {
+  return users.filter((user) => user.isActive);
+}
+console.log(getActiveUsers(users));
+// 2. getAdultActiveNames(users) → массив ИМЁН активных И совершеннолетних (age >= 18)
+function getAdultActiveNames(users) {
+  return users
+    .filter((user) => user.isActive && user.age >= 18)
+    .map((user) => user.name);
+}
+console.log(getAdultActiveNames(users));
+// 3. getUsersFromCity(users, city) → пользователи из указанного города
+
+function getUsersFromCity(users, city) {
+  return users.filter((user) => user.city === city);
+}
+console.log(getUsersFromCity(users, "Moscow"));
+// 4. getUserById(users, id) → пользователь по id (или undefined)
+function getUserById(users, id) {
+  return users.find((user) => user.id === id);
+}
+console.log(getUserById(users, 3));
+
+// 5. getAverageSalaryOfActive
+function getAverageSalaryOfActive(users) {
+  const salaries = users
+    .filter((user) => user.isActive)
+    .map((user) => user.salary);
+
+  let sum = 0;
+  salaries.forEach((salary) => (sum += salary));
+
+  return sum / salaries.length;
+}
+console.log(getAverageSalaryOfActive(users));
+
+// 6. getCities
+function getCities(users) {
+  const cities = users.map((user) => user.city);
+
+  return [...new Set(cities)];
+}
+console.log(getCities(users));
