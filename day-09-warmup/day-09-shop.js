@@ -97,10 +97,27 @@ function getCategoryRevenue(products) {
 console.log(getCategoryRevenue(products));
 
 function getCategoryRevenue1(products) {
-  return products.reduce((acc, product) => {
-    const revenue = product.price * product.sold;
-    acc[product.category] = (acc[product.category] || 0) + revenue;
-    return acc;
-  }, {});
+  return products.reduce(
+    (acc, product) => ({
+      ...acc,
+      [product.category]:
+        (acc[product.category] || 0) + product.price * product.sold,
+    }),
+    {},
+  );
 }
 console.log(getCategoryRevenue1(products));
+
+// Кубик 2: выручка одного товара (одна идея — одна функция)
+const getRevenue = (product) => product.price * product.sold;
+
+// Кубик 1: выручка по категориям за ОДИН проход, использует getRevenue внутри
+const getCategoryRevenue2 = (products) =>
+  products.reduce((acc, product) => {
+    // используй getRevenue(product) вместо product.price * product.sold
+    // распредели по acc[product.category]
+    acc[product.category] = (acc[product.category] || 0) + getRevenue(product);
+    return acc;
+  }, {});
+
+console.log(getCategoryRevenue2(products));
