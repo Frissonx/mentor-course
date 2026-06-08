@@ -110,3 +110,11 @@ filter, find, findIndex, цепочки — ВЗЯТО
 - ошибки: try { await ... } catch (error) — замена .then/.catch
 - вызвать функцию (fetchData()) → она вернёт промис → await его ждёт
 - ЛИНИЯ ДНЯ: setTimeout (вызовут позже) → Promise (обещание + then/catch) → async/await (как синхронный код). Одно и то же, три формы
+- День 10 ЗАКРЫТ: fetch — РЕАЛЬНЫЕ данные с сервера
+- fetch(url) возвращает промис → await его
+- ДВА await: const res = await fetch(url); const data = await res.json()
+- (1) fetch ждёт ОТВЕТ сервера, (2) .json() парсит тело из JSON в JS-объект
+- JSON — текстовый формат данных, выглядит как объект; .json() → настоящий объект
+- СОЕДИНИЛ ВСЁ: fetch + async/await (сегодня) + slice/map (неделю назад) на реальных данных
+- getPosts: запросил 100 постов с сервера → slice(0,3) → map(title) — полный цикл фронтендера!
+- после await данные на руках → дальше код синхронный, сверху вниз

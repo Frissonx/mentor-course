@@ -49,45 +49,77 @@
 // unstableServer
 //   .then((result) => console.log(result))
 //   .catch((error) => console.log(error));
+//
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (Math.random() > 0.3) {
+//         resolve("Данные получены");
+//       } else {
+//         reject("Сервер недоступен");
+//       }
+//     }, 1000);
+//   });
+// }
+// async function loadData() {
+//   try {
+//     const result = await fetchData();
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// loadData();
+//
+// function orderPizza() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (Math.random() > 0.5) {
+//         resolve("Пицца готова!");
+//       } else {
+//         reject("Пицца сгорела!");
+//       }
+//     }, 1500);
+//   });
+// }
+// async function getPizza() {
+//   try {
+//     const result = await orderPizza();
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// getPizza();
 
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (Math.random() > 0.3) {
-        resolve("Данные получены");
-      } else {
-        reject("Сервер недоступен");
-      }
-    }, 1000);
-  });
-}
-async function loadData() {
+// 1. Напиши async-функцию getUser, которая:
+//    -await fetch по адресу
+//    -await response.json()
+//    -выведи полученный объект в консоль
+//    -оберни в try/catch
+//    Вызови getUser(). В консоли увидишь реальные данные пользователя с сервера!
+async function getUser() {
   try {
-    const result = await fetchData();
-    console.log(result);
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users/1",
+    );
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
-    console.log(error);
+    console.log("Ошибка:", error);
   }
 }
-loadData();
+getUser();
 
-function orderPizza() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (Math.random() > 0.5) {
-        resolve("Пицца готова!");
-      } else {
-        reject("Пицца сгорела!");
-      }
-    }, 1500);
-  });
-}
-async function getPizza() {
+async function getPosts() {
   try {
-    const result = await orderPizza();
-    console.log(result);
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await response.json();
+    console.log(data.length);
+    const getTitle = data.slice(0, 3).map((item) => item.title);
+    console.log(getTitle);
   } catch (error) {
-    console.log(error);
+    console.log("Ошибка:", error);
   }
 }
-getPizza();
+getPosts();
