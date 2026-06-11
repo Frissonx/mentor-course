@@ -16,8 +16,17 @@ const taskInput = document.querySelector("#task-input");
 const list = document.querySelector("#task-list");
 
 
+// function render() {
+// 	list.innerHTML = tasks.map(task => `<li>${task}</li>`).join('');
+// }
+
 function render() {
-	list.innerHTML = tasks.map(task => `<li>${task}</li>`).join('');
+	list.innerHTML = '';	// Очистили список
+	tasks.forEach((task) => {
+		const li = document.createElement('li');	// Созадли пустой <li>
+		li.textContent = task; // Положили текст как текст 
+		list.append(li); // добавили в список
+	});
 }
 
 form.addEventListener("submit", (event) => {
