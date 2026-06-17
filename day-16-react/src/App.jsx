@@ -1,18 +1,14 @@
-function UserCard({ name, age }) {
-  return (
-    <div>
-      <h1>{name}</h1>
-      <p>Возраст: {age}</p>
-    </div>
-  );
-}
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <UserCard name="Анна" age={28} />
-      <UserCard name="Борис" age={26} />
-      <UserCard name="карол" age={18} />
+      <p>Нажатий: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Прибавь</button>
+      <button onClick={() => setCount(count - 1)}>Вычти</button>
+      <button onClick={() => setCount(0)}>Сброс</button>
     </div>
   );
 }
