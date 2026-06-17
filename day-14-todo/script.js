@@ -14,26 +14,33 @@ let tasks = [];
 const form = document.querySelector("#task-form");
 const taskInput = document.querySelector("#task-input");
 const list = document.querySelector("#task-list");
-
+const count = document.querySelector("#counter");
 
 // function render() {
 // 	list.innerHTML = tasks.map(task => `<li>${task}</li>`).join('');
 // }
 
 function render() {
-	list.innerHTML = '';	// Очистили список
-	tasks.forEach((task) => {
-		const li = document.createElement('li');	// Созадли пустой <li>
-		li.textContent = task; // Положили текст как текст 
-		list.append(li); // добавили в список
-	});
+  list.innerHTML = "";
+  count.textContent = `Количество задач: ${tasks.length}`; // Очистили список
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li"); // Созадли пустой <li>
+    li.textContent = task; // Положили текст как текст
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "X";
+    delBtn.addEventListener("click", () => {
+      tasks.splice(index, 1);
+      render();
+    });
+    li.append(delBtn);
+    list.append(li);
+  });
 }
 
 form.addEventListener("submit", (event) => {
-	event.preventDefault();
-	if(!taskInput.value) return;
-	tasks.push(taskInput.value);
-	taskInput.value = '';
-	render();
-
-})
+  event.preventDefault();
+  if (!taskInput.value) return;
+  tasks.push(taskInput.value);
+  taskInput.value = "";
+  render();
+});
