@@ -1,29 +1,34 @@
-function ProductCard({ title, price }) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>Цена: {price} рублей</p>
-    </div>
-  );
-}
+import { useState } from "react";
 
 function App() {
-  const products = [
-    { id: 1, title: "Burn", price: 120 },
-    { id: 2, title: "RedBull", price: 230 },
-    { id: 3, title: "Flash", price: 100 },
-  ];
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!input) return;
+    setTasks([...tasks, input]);
+    setInput("");
+  }
+
   return (
     <div>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          title={product.title}
-          price={product.price}
+      <h1>Мои задачи</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Что сделать?"
         />
-      ))}
+        <button type="submit">Добавить</button>
+      </form>
+      <p>Задач: {tasks.length}</p>
+      <ul>
+        {tasks.map((task, index) => (
+          <li key={index}>{task}</li>
+        ))}
+      </ul>
     </div>
   );
 }
-
 export default App;
