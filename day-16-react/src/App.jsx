@@ -25,7 +25,14 @@ function App() {
       <p>Задач: {tasks.length}</p>
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
+          <li key={index}>
+            {task}
+            <button
+              onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
+            >
+              x
+            </button>
+          </li>
         ))}
       </ul>
     </div>
