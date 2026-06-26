@@ -20,7 +20,7 @@ function App() {
   ];
   const [showTop, setShowTop] = useState(false);
 
-  const filtered = showTop ? movies.filter((m) => m.rating >= 8.8) : movies;
+  const filtered = showTop ? movies.filter((m) => m.rating > 8.8) : movies;
 
   return (
     <div>
@@ -40,3 +40,4 @@ function App() {
   );
 }
 export default App;
+  
