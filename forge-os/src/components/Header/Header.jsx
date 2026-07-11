@@ -1,8 +1,14 @@
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
+import AddTaskButton from "./AddTaskButton";
+
 function Header() {
-	return (
-		<header>
-			<h1>Forge OS v0.1</h1>
-		</header>
-	)
+  return (
+    <header>
+      <Logo />
+      <SearchBar />
+      <AddTaskButton />
+    </header>
+  );
 }
-export default Header
+export default Header;
