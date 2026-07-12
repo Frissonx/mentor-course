@@ -1,6 +1,6 @@
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
-import AddTaskButton from "./AddTaskButton";
+import Logo from "../Logo";
+import SearchBar from "../SearchBar";
+import AddTaskButton from "../AddTaskButton";
 
 function Header() {
   return (
