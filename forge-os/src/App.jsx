@@ -1,7 +1,7 @@
-import Header from "./components/Header";
+import Header from './components/Header'
 
 function App() {
-  return <Header className="text-red-500 underline" />;
+	return <Header />
 }
 
-export default App;
+export default App

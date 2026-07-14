@@ -1,4 +1,8 @@
 function AddTaskButton() {
-  return <button>+ Новая задача</button>;
+	return (
+		<button className="text-orange-600 hover:text-orange-700">
+			+ Новая задача
+		</button>
+	)
 }
-export default AddTaskButton;
+export default AddTaskButton
